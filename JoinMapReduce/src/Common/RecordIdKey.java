@@ -47,4 +47,5 @@ public class RecordIdKey implements WritableComparable<RecordIdKey> {
 	
 	public static final IntWritable MOVIE_RECORD = new IntWritable(0);
 	public static final IntWritable RATING_RECORD = new IntWritable(1);
+	public static final IntWritable MOVIERATING_RECORD = new IntWritable(2);
 }

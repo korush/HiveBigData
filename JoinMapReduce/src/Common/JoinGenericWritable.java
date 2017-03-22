@@ -10,7 +10,8 @@ public class JoinGenericWritable extends GenericWritable {
     static {
         CLASSES = (Class<? extends Writable>[]) new Class[] {
                 MovieRecord.class,
-                RatingRecord.class
+                RatingRecord.class,
+                MovieRateRecord.class
         };
     }
    

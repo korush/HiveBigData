@@ -5,6 +5,7 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.WritableComparable;
 
@@ -15,7 +16,7 @@ public class RecordIdKey implements WritableComparable<RecordIdKey> {
 	
 	public RecordIdKey(){}
 	public RecordIdKey(int recordId, IntWritable recordType) {
-	    this.RecordType.set(recordId);
+	    this.RecordId.set(recordId);
 	    this.RecordType = recordType;
 	}
 
@@ -39,6 +40,7 @@ public class RecordIdKey implements WritableComparable<RecordIdKey> {
 	
 	public boolean equals (RecordIdKey other) {
 	    return this.RecordId.equals(other.RecordId) && this.RecordType.equals(other.RecordType );
+
 	}
 
 	public int hashCode() {

@@ -24,6 +24,7 @@ public class MovieMapper extends Mapper<LongWritable, Text, RecordIdKey, JoinGen
         MovieRecord record = new MovieRecord(title, genre);
         JoinGenericWritable genericRecord = new JoinGenericWritable(record);
         context.write(recordKey, genericRecord);
+       
       }
       catch(Exception e)
       {

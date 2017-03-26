@@ -36,5 +36,13 @@ public class MovieRateRecord implements Writable {
 	        this.Genres.readFields(in);
 	        this.Rating.readFields(in);
 	    }
+	    
+
+	    @Override
+	    public String toString()
+	    {
+	    	return this.Title.toString() + " " + this.Genres.toString()  + " " + this.Rating;
+	    }
+	    
 
 }

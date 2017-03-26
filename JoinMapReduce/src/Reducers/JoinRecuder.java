@@ -20,11 +20,15 @@ public class JoinRecuder extends Reducer<RecordIdKey, JoinGenericWritable, Text,
         StringBuilder output = new StringBuilder();
         int count = 0;
         
-                                        
+        System.out.println("**** "+ key.RecordType + "  ******");
+                               
         for (JoinGenericWritable v : values) {
+        	
             Writable record = v.get();
-            if (key.RecordType.equals(RecordIdKey.MOVIE_RECORD)){
+            System.out.println(record.getClass());
+            if (record.getClass() ==  Common.MovieRecord.class){// key.RecordType.equals(RecordIdKey.MOVIE_RECORD)){
                 MovieRecord pRecord = (MovieRecord)record;
+                System.out.println(pRecord.Genres.toString());
                 output.append(Integer.parseInt(key.RecordId.toString())).append(", ");
                 output.append(pRecord.Title.toString()).append(", ");
                 output.append(pRecord.Genres.toString()).append(", ");

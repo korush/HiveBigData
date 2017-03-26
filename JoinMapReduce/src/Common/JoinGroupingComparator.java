@@ -12,7 +12,7 @@ public class JoinGroupingComparator extends WritableComparator {
     public int compare (WritableComparable a, WritableComparable b){
     	RecordIdKey first = (RecordIdKey) a;
     	RecordIdKey second = (RecordIdKey) b;
-                      
+                    
         return first.RecordId.compareTo(second.RecordId);
     }
 }

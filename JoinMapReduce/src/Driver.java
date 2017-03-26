@@ -17,14 +17,9 @@ import org.apache.hadoop.util.ToolRunner;
 import Common.JoinGenericWritable;
 import Common.JoinGroupingComparator;
 import Common.JoinSortingComparator;
+import Common.MapFileGenegrator;
 import Common.RecordIdKey;
-import Mappers.MovieMapper;
-import Mappers.RatingJoinMaper;
-import Mappers.RatingMapper;
-import Q1.MovieMapperNoFilter;
-import Q1.RatingMapperNoFilter;
-import Reducers.JoinRecuder;
-import Reducers.RatingReducer;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -183,6 +178,20 @@ public class Driver {
 		 Q4.RatingJoinMaperFilter.class,
 		 Q4.RatingJoinReducerFilter.class,
 		 JoinGroupingComparator.class, JoinSortingComparator.class);
+		 
+		 
+		 ///Generate Index file
+		 //MapFileGenegrator.Generate(conf, inputFilePath, outputFilePath, keyIndex, valueIndex);
+		 
+		 
+		 ///No Sort (Q1Index)
+		 runJob("Q1IndexFilterInReducerJoinInReducer", args[0], args[1], args[2],
+		 Q1Index.RatingJoinMaperNoFilter.class, Q1Index.RatingJoinReducerNoFilter.class,
+		 JoinGroupingComparator.class, null);
+
+		 runJob("Q1IndexFilterInMappersJoinInReducer", args[0], args[1], args[2],
+		 Q1Index.RatingJoinMaperFilter.class, Q1Index.RatingJoinReducerFilter.class,
+		 JoinGroupingComparator.class, null);
 
 	}
 

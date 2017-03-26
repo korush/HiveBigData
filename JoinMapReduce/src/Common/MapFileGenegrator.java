@@ -16,7 +16,7 @@ import org.apache.hadoop.io.MapFile.Writer.Option;
 
 public class MapFileGenegrator {
 	
-	private static void Generate(Configuration conf, String inputFilePath, String outputFilePath, int keyIndex, int valueIndex) throws IOException {
+	public static void Generate(Configuration conf, String inputFilePath, String outputFilePath, int keyIndex, int valueIndex) throws IOException {
 	    Path outputLocation = new Path(outputFilePath);
 	    
 	    Option keyClass = (Option)MapFile.Writer.keyClass(IntWritable.class);
